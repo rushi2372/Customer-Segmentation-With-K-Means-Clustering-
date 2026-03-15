@@ -1,32 +1,144 @@
-# customer-segmentation-with-K-Means-Clustering
+# 🛍️ Customer Segmentation with K-Means Clustering
 
-## Overview:
-The "Customer Segmentation with K-Means Clustering" project utilizes the K-means clustering algorithm to categorize supermarket customers based on their spending behavior. The primary objective is to identify distinct customer segments and devise targeted marketing strategies to enhance customer engagement and satisfaction.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-1.3%2B-orange?logo=scikit-learn)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Process:
-1. **Loading and Exploring Data:**
-   - The dataset is loaded into a Pandas DataFrame.
-   - Basic exploratory data analysis is performed, including examining the first five rows, checking the data shape, and reviewing data information for insights.
+## 📌 Overview
 
-2. **Data Preprocessing:**
-   - Missing values are checked and found to be absent.
-   - The relevant columns for clustering (Annual Income and Spending Score) are selected.
+This project applies **K-Means Clustering** — an unsupervised machine learning algorithm — to segment mall customers based on their **Annual Income** and **Spending Score**.
 
-3. **Determining Optimal Clusters:**
-   - The "Elbow Method" is employed to determine the optimal number of clusters.
-   - The Within-Cluster-Sum-of-Squares (WCSS) is plotted against the number of clusters.
+By identifying distinct customer groups, businesses can craft **targeted marketing strategies** that improve customer engagement and overall satisfaction.
 
-4. **Training K-Means Model:**
-   - The K-means clustering model is trained with the optimal number of clusters determined from the elbow method.
-   - Labels are assigned to each data point based on their respective clusters.
+---
 
-5. **Visualization:**
-   - The clustered data points are visualized in a scatter plot.
-   - Each cluster is represented by a distinct color, making it easy to discern different customer groups.
-   - The plot illustrates the relationship between Annual Income and Spending Score for each customer segment.
+## 📁 Project Structure
 
-## Contact Details:
-Phone: 9096506345
-Email: rushikeshsangamnere4561@gmail.com
-         
+```
+customer-segmentation/
+│
+├── data/
+│   └── Mall_Customers.csv          # Raw dataset
+│
+├── notebooks/
+│   └── Customer_Segmentation_KMeans.ipynb  # Main analysis notebook
+│
+├── images/
+│   ├── eda_distributions.png       # EDA plots (auto-generated)
+│   ├── gender_distribution.png     # Gender pie chart (auto-generated)
+│   ├── elbow_method.png            # Elbow curve (auto-generated)
+│   └── customer_clusters.png       # Final cluster visualization (auto-generated)
+│
+├── requirements.txt                # Python dependencies
+├── .gitignore
+└── README.md
+```
 
+---
+
+## 📊 Dataset
+
+**Source:** [Kaggle — Mall Customer Segmentation Data](https://www.kaggle.com/vjchoudhary7/customer-segmentation-tutorial-in-python)
+
+| Feature | Description |
+|---|---|
+| `CustomerID` | Unique identifier for each customer |
+| `Gender` | Male / Female |
+| `Age` | Age of the customer |
+| `Annual Income (k$)` | Annual income in thousands of USD |
+| `Spending Score (1-100)` | Score assigned based on customer spending behavior |
+
+- **Rows:** 200 customers  
+- **No missing values**
+
+---
+
+## 🔄 Workflow
+
+```
+Load Data → EDA → Preprocessing → Elbow Method → K-Means Training → Visualization → Insights
+```
+
+1. **Load & Explore** — Load the dataset and perform basic EDA
+2. **Preprocess** — Check for nulls and select clustering features
+3. **Elbow Method** — Determine optimal number of clusters (k = 5)
+4. **Train Model** — Fit K-Means with `k-means++` initialization
+5. **Visualize** — Plot customer segments with centroids
+6. **Insights** — Derive actionable marketing strategies per cluster
+
+---
+
+## 📈 Results
+
+### Elbow Method
+The WCSS elbow appears clearly at **k = 5**, confirming 5 optimal clusters.
+
+### Customer Segments
+
+| Cluster | Profile | Recommended Strategy |
+|---|---|---|
+| 🟢 Cluster 1 | Low Income, Low Spend | Budget deals, value promotions |
+| 🔴 Cluster 2 | High Income, Low Spend | Premium product showcases, personalized offers |
+| 🟡 Cluster 3 | Mid Income, Mid Spend | Membership programs, seasonal campaigns |
+| 🟣 Cluster 4 | Low Income, High Spend | Loyalty rewards, early-access deals |
+| 🔵 Cluster 5 | High Income, High Spend | VIP programs, luxury product lines |
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/your-username/customer-segmentation.git
+cd customer-segmentation
+```
+
+### 2. Create a Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+source venv/bin/activate        # macOS/Linux
+venv\Scripts\activate           # Windows
+```
+
+### 3. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Launch Jupyter Notebook
+
+```bash
+jupyter notebook notebooks/Customer_Segmentation_KMeans.ipynb
+```
+
+---
+
+## 🧰 Tech Stack
+
+| Library | Purpose |
+|---|---|
+| `pandas` | Data loading and manipulation |
+| `numpy` | Numerical operations |
+| `matplotlib` | Plotting and visualization |
+| `seaborn` | Enhanced statistical plots |
+| `scikit-learn` | K-Means clustering algorithm |
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 🙋 Author
+
+Feel free to reach out for any questions or suggestions!
+
+- **Name:** **Rushikesh Sangamnere**
+- **Email:**  **rushikeshsangamnere4561@gmail.com**
+- **Phone:**  **+91 9096506345**
